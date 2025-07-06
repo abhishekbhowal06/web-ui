@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HybridCaller - AI Calling Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/heroicons@2.0.18/24/outline/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>🤖 HybridCaller</h2>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#marketplace">AI Agents</a>
+                <a href="#dashboard">Dashboard</a>
+                <button class="btn-primary">Start Free Trial</button>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in">Transform Your Outreach with AI-Powered Calls</h1>
+                <p class="fade-in">Scale your business with intelligent phone campaigns that sound human, convert better, and save you hours of manual calling.</p>
+                <div class="hero-cta fade-in">
+                    <button class="btn-primary btn-large">Start Free Trial - 20 Calls</button>
+                    <button class="btn-secondary">Watch Demo</button>
+                </div>
+                <div class="hero-stats fade-in">
+                    <div class="stat">
+                        <span class="stat-number">50M+</span>
+                        <span class="stat-label">Calls Made</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">99.2%</span>
+                        <span class="stat-label">Uptime</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">15min</span>
+                        <span class="stat-label">Setup Time</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual fade-in">
+                <div class="dashboard-preview">
+                    <div class="preview-header">
+                        <div class="preview-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span>HybridCaller Dashboard</span>
+                    </div>
+                    <div class="preview-content">
+                        <div class="call-analytics">
+                            <div class="metric">
+                                <span class="metric-value">847</span>
+                                <span class="metric-label">Calls Today</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">73%</span>
+                                <span class="metric-label">Connect Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Everything You Need to Scale Your Calls</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Drag & Drop Campaigns</h3>
+                    <p>Set up call campaigns in minutes with our intuitive visual builder. No technical skills required.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📊</div>
+                    <h3>Real-Time Analytics</h3>
+                    <p>Track answered calls, conversion rates, and ROI with live dashboards that update every second.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎤</div>
+                    <h3>Voice Cloning</h3>
+                    <p>Upload a 30-second sample and get a perfect AI replica of any voice in minutes.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🔗</div>
+                    <h3>CRM Integration</h3>
+                    <p>Sync with Google Sheets, Airtable, Salesforce, and 50+ other platforms automatically.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📋</div>
+                    <h3>Industry Templates</h3>
+                    <p>Pre-built scripts for Real Estate, Dental, Coaching, and more. Customize to fit your needs.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Make 100+ calls simultaneously. Scale from 10 to 10,000 calls without missing a beat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Self-Service Portal -->
+    <section class="portal">
+        <div class="container">
+            <h2 class="section-title">Pricing Calculator</h2>
+            <div class="calculator fade-in">
+                <div class="calculator-content">
+                    <h3>How many calls do you need per month?</h3>
+                    <div class="slider-container">
+                        <input type="range" id="call-slider" min="100" max="5000" value="500" step="50">
+                        <div class="slider-labels">
+                            <span>100</span>
+                            <span>5,000</span>
+                        </div>
+                    </div>
+                    <div class="calculator-result">
+                        <p><span id="call-count">500</span> calls/month</p>
+                        <p class="price-display">Cost: <span id="price">$99</span>/month</p>
+                        <p class="price-per-call">That's only <span id="per-call">$0.20</span> per call</p>
+                    </div>
+                    <button class="btn-primary">Start Free Trial</button>
+                </div>
+                <div class="calculator-features">
+                    <h4>Included in all plans:</h4>
+                    <ul>
+                        <li>✅ Real-time analytics</li>
+                        <li>✅ Voice cloning</li>
+                        <li>✅ CRM integrations</li>
+                        <li>✅ Industry templates</li>
+                        <li>✅ 24/7 support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Choose Your Plan</h2>
+            <div class="pricing-toggle">
+                <span class="toggle-label">Monthly</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="annual-toggle">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label">Annual <span class="discount">Save 20%</span></span>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in">
+                    <div class="card-header">
+                        <h3>Starter</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount" data-monthly="49" data-annual="39">49</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>Perfect for small businesses</p>
+                    </div>
+                    <ul class="features-list">
+                        <li>✅ Up to 500 calls/month</li>
+                        <li>✅ 2 AI voices</li>
+                        <li>✅ Basic analytics</li>
+                        <li>✅ Email support</li>
+                        <li>✅ CRM integrations</li>
+                    </ul>
+                    <button class="btn-outline">Start Free Trial</button>
+                </div>
+                <div class="pricing-card featured fade-in">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="card-header">
+                        <h3>Pro</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount" data-monthly="149" data-annual="119">149</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>For growing businesses</p>
+                    </div>
+                    <ul class="features-list">
+                        <li>✅ Up to 2,000 calls/month</li>
+                        <li>✅ Unlimited AI voices</li>
+                        <li>✅ Advanced analytics</li>
+                        <li>✅ Priority support</li>
+                        <li>✅ Custom integrations</li>
+                        <li>✅ A/B testing</li>
+                    </ul>
+                    <button class="btn-primary">Start Free Trial</button>
+                </div>
+                <div class="pricing-card fade-in">
+                    <div class="card-header">
+                        <h3>Enterprise</h3>
+                        <div class="price">
+                            <span class="amount">Custom</span>
+                        </div>
+                        <p>For large organizations</p>
+                    </div>
+                    <ul class="features-list">
+                        <li>✅ Unlimited calls</li>
+                        <li>✅ Custom AI training</li>
+                        <li>✅ White-label solution</li>
+                        <li>✅ Dedicated support</li>
+                        <li>✅ API access</li>
+                        <li>✅ Custom integrations</li>
+                    </ul>
+                    <button class="btn-outline">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Agent Marketplace -->
+    <section id="marketplace" class="marketplace">
+        <div class="container">
+            <h2 class="section-title">AI Agent Marketplace</h2>
+            <p class="section-subtitle">Pre-trained AI agents ready to make calls for your industry</p>
+            <div class="agents-grid">
+                <div class="agent-card fade-in">
+                    <div class="agent-avatar">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop&crop=face" alt="Realtor Rachel">
+                    </div>
+                    <h3>Realtor Rachel</h3>
+                    <p>Expert in real estate prospecting and lead qualification</p>
+                    <div class="agent-stats">
+                        <span>🏠 Real Estate</span>
+                        <span>⭐ 4.9/5</span>
+                    </div>
+                    <div class="voice-demo">
+                        <button class="demo-btn" data-voice="realtor">
+                            <span class="play-icon">▶️</span>
+                            Play Demo
+                        </button>
+                    </div>
+                    <button class="btn-primary">Use This Agent</button>
+                </div>
+                <div class="agent-card fade-in">
+                    <div class="agent-avatar">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=120&h=120&fit=crop&crop=face" alt="Dr. Smith">
+                    </div>
+                    <h3>Dental Dr. Smith</h3>
+                    <p>Specialized in dental appointment booking and patient care</p>
+                    <div class="agent-stats">
+                        <span>🦷 Healthcare</span>
+                        <span>⭐ 4.8/5</span>
+                    </div>
+                    <div class="voice-demo">
+                        <button class="demo-btn" data-voice="dental">
+                            <span class="play-icon">▶️</span>
+                            Play Demo
+                        </button>
+                    </div>
+                    <button class="btn-primary">Use This Agent</button>
+                </div>
+                <div class="agent-card fade-in">
+                    <div class="agent-avatar">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&h=120&fit=crop&crop=face" alt="Coach Lisa">
+                    </div>
+                    <h3>Coach Lisa</h3>
+                    <p>Life and business coaching consultation calls</p>
+                    <div class="agent-stats">
+                        <span>💼 Coaching</span>
+                        <span>⭐ 4.9/5</span>
+                    </div>
+                    <div class="voice-demo">
+                        <button class="demo-btn" data-voice="coaching">
+                            <span class="play-icon">▶️</span>
+                            Play Demo
+                        </button>
+                    </div>
+                    <button class="btn-primary">Use This Agent</button>
+                </div>
+            </div>
+            <audio id="demo-player" preload="metadata"></audio>
+        </div>
+    </section>
+
+    <!-- Admin Dashboard Preview -->
+    <section id="dashboard" class="dashboard-section">
+        <div class="container">
+            <h2 class="section-title">Simple Admin Dashboard</h2>
+            <div class="dashboard-preview-large">
+                <div class="setup-flow fade-in">
+                    <h3>Campaign Setup in 4 Easy Steps</h3>
+                    <div class="steps">
+                        <div class="step active">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Upload Contacts</h4>
+                                <p>Drag & drop your CSV file</p>
+                                <div class="upload-zone">
+                                    <div class="upload-icon">📁</div>
+                                    <p>Drop your CSV here or click to browse</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Choose AI Voice</h4>
+                                <p>Select from our marketplace or clone your own</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Select Script Template</h4>
+                                <p>Industry-specific templates ready to use</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Launch! 🚀</h4>
+                                <p>Your campaign goes live instantly</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="analytics-preview fade-in">
+                    <h3>Real-Time Analytics</h3>
+                    <div class="analytics-grid">
+                        <div class="metric-card">
+                            <div class="metric-icon">📞</div>
+                            <div class="metric-value">1,247</div>
+                            <div class="metric-label">Total Calls</div>
+                            <div class="metric-change positive">+12% today</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">✅</div>
+                            <div class="metric-value">892</div>
+                            <div class="metric-label">Answered</div>
+                            <div class="metric-change positive">71.5% rate</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">❌</div>
+                            <div class="metric-value">355</div>
+                            <div class="metric-label">Missed</div>
+                            <div class="metric-change negative">28.5% rate</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">💰</div>
+                            <div class="metric-value">$15,680</div>
+                            <div class="metric-label">Revenue Generated</div>
+                            <div class="metric-change positive">+24% this week</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Ready to Transform Your Outreach?</h2>
+                <p>Join thousands of businesses already using HybridCaller to scale their phone campaigns.</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary btn-large">Start Free Trial - 20 Calls</button>
+                    <button class="btn-secondary">Schedule Demo</button>
+                </div>
+                <p class="cta-note">No credit card required • Setup in under 15 minutes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>🤖 HybridCaller</h3>
+                    <p>AI-powered calling service that scales with your business.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Product</h4>
+                        <a href="#features">Features</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#marketplace">AI Agents</a>
+                        <a href="#dashboard">Dashboard</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Support</h4>
+                        <a href="#">Help Center</a>
+                        <a href="#">API Docs</a>
+                        <a href="#">Status</a>
+                        <a href="#">Security</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HybridCaller. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
