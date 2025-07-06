@@ -1,151 +1,258 @@
-<img src="./assets/web-ui.png" alt="Browser Use Web UI" width="full"/>
+# 🤖 HybridCaller - AI Calling Service Website
 
-<br/>
+A modern, responsive SaaS website for HybridCaller, an AI-powered calling service that helps businesses scale their phone campaigns with intelligent automation.
 
-[![GitHub stars](https://img.shields.io/github/stars/browser-use/web-ui?style=social)](https://github.com/browser-use/web-ui/stargazers)
-[![Discord](https://img.shields.io/discord/1303749220842340412?color=7289DA&label=Discord&logo=discord&logoColor=white)](https://link.browser-use.com/discord)
-[![Documentation](https://img.shields.io/badge/Documentation-📕-blue)](https://docs.browser-use.com)
-[![WarmShao](https://img.shields.io/twitter/follow/warmshao?style=social)](https://x.com/warmshao)
+## ✨ Features
 
-This project builds upon the foundation of the [browser-use](https://github.com/browser-use/browser-use), which is designed to make websites accessible for AI agents.
+### 🌟 Core Components
+- **Responsive Hero Section** with animated stats and dashboard preview
+- **Interactive Pricing Calculator** with real-time cost calculations
+- **3-Tier Pricing Plans** with monthly/annual toggle
+- **AI Agent Marketplace** with voice demo functionality
+- **Admin Dashboard Preview** with drag-and-drop campaign setup
+- **Real-time Analytics** simulation
 
-We would like to officially thank [WarmShao](https://github.com/warmshao) for his contribution to this project.
+### 🎨 Design Specifications
+- **Colors**: 
+  - Primary: `#2563eb` (Vibrant Blue)
+  - Secondary: `#10b981` (Emerald Green)
+  - Accent: `#f97316` (CTA Orange)
+- **Typography**: 
+  - Headings: Poppins (Bold)
+  - Body: Inter (Clean)
+- **Icons**: Heroicons style
+- **Animations**: Fade-in sections, hover effects, scroll animations
 
-**WebUI:** is built on Gradio and supports most of `browser-use` functionalities. This UI is designed to be user-friendly and enables easy interaction with the browser agent.
+### 🔧 Interactive Features
+1. **Pricing Calculator**
+   - Slider for calls/month (100-5,000)
+   - Dynamic pricing tiers
+   - Real-time cost per call calculation
 
-**Expanded LLM Support:** We've integrated support for various Large Language Models (LLMs), including: Google, OpenAI, Azure OpenAI, Anthropic, DeepSeek, Ollama etc. And we plan to add support for even more models in the future.
+2. **Voice Demo Player**
+   - "Realtor Rachel" - Real Estate agent
+   - "Dental Dr. Smith" - Healthcare professional
+   - "Coach Lisa" - Business coaching
+   - Simulated voice playback with notifications
 
-**Custom Browser Support:** You can use your own browser with our tool, eliminating the need to re-login to sites or deal with other authentication challenges. This feature also supports high-definition screen recording.
+3. **Campaign Setup Flow**
+   - 4-step visual process
+   - Interactive upload zone
+   - Drag & drop file handling
 
-**Persistent Browser Sessions:** You can choose to keep the browser window open between AI tasks, allowing you to see the complete history and state of AI interactions.
+4. **Real-time Analytics**
+   - Live updating metrics
+   - Animated counters
+   - Performance indicators
 
-<video src="https://github.com/user-attachments/assets/56bc7080-f2e3-4367-af22-6bf2245ff6cb" controls="controls">Your browser does not support playing this video!</video>
+## 🚀 Getting Started
 
-## Installation Guide
+### Prerequisites
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+- No additional dependencies required - pure HTML, CSS, and JavaScript
 
-### Option 1: Local Installation
+### Installation
+1. Clone or download the repository
+2. Open `index.html` in your web browser
+3. That's it! The website is ready to use
 
-Read the [quickstart guide](https://docs.browser-use.com/quickstart#prepare-the-environment) or follow the steps below to get started.
-
-#### Step 1: Clone the Repository
-```bash
-git clone https://github.com/browser-use/web-ui.git
-cd web-ui
+### File Structure
+```
+hybridcaller-website/
+├── index.html          # Main HTML structure
+├── styles.css          # Complete CSS styling
+├── script.js           # Interactive functionality
+└── README.md           # This file
 ```
 
-#### Step 2: Set Up Python Environment
-We recommend using [uv](https://docs.astral.sh/uv/) for managing the Python environment.
+## 🎯 Key Sections
 
-Using uv (recommended):
-```bash
-uv venv --python 3.11
-```
+### 1. Navigation Bar
+- Fixed navigation with blur effect
+- Smooth scroll to sections
+- Mobile hamburger menu
+- Call-to-action button
 
-Activate the virtual environment:
-- Windows (Command Prompt):
-```cmd
-.venv\Scripts\activate
-```
-- Windows (PowerShell):
-```powershell
-.\.venv\Scripts\Activate.ps1
-```
-- macOS/Linux:
-```bash
-source .venv/bin/activate
-```
+### 2. Hero Section
+- Compelling headline with gradient text
+- Key statistics with counter animations
+- Dashboard preview mockup
+- Dual call-to-action buttons
 
-#### Step 3: Install Dependencies
-Install Python packages:
-```bash
-uv pip install -r requirements.txt
-```
+### 3. Features Grid
+- 6 key features with icons and descriptions
+- Hover animations and visual feedback
+- Mobile-responsive layout
 
-Install Browsers in playwright. 
-```bash
-playwright install --with-deps
-```
-Or you can install specific browsers by running:
-```bash
-playwright install chromium --with-deps
-```
+### 4. Pricing Calculator
+- Interactive slider for call volume
+- Tiered pricing structure:
+  - 0-500 calls: $0.15/call (min $49)
+  - 501-1000 calls: Reduced rate
+  - 1001-2000 calls: Volume discount
+  - 2000+ calls: Enterprise pricing
+- Real-time price updates
 
-#### Step 4: Configure Environment
-1. Create a copy of the example environment file:
-- Windows (Command Prompt):
-```bash
-copy .env.example .env
-```
-- macOS/Linux/Windows (PowerShell):
-```bash
-cp .env.example .env
-```
-2. Open `.env` in your preferred text editor and add your API keys and other settings
+### 5. Pricing Plans
+- Three tiers: Starter, Pro, Enterprise
+- Monthly/Annual toggle with 20% savings
+- Feature comparison lists
+- Popular plan highlighting
 
-#### Step 5: Enjoy the web-ui
-1.  **Run the WebUI:**
-    ```bash
-    python webui.py --ip 127.0.0.1 --port 7788
-    ```
-2. **Access the WebUI:** Open your web browser and navigate to `http://127.0.0.1:7788`.
-3. **Using Your Own Browser(Optional):**
-    - Set `BROWSER_PATH` to the executable path of your browser and `BROWSER_USER_DATA` to the user data directory of your browser. Leave `BROWSER_USER_DATA` empty if you want to use local user data.
-      - Windows
-        ```env
-         BROWSER_PATH="C:\Program Files\Google\Chrome\Application\chrome.exe"
-         BROWSER_USER_DATA="C:\Users\YourUsername\AppData\Local\Google\Chrome\User Data"
-        ```
-        > Note: Replace `YourUsername` with your actual Windows username for Windows systems.
-      - Mac
-        ```env
-         BROWSER_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-         BROWSER_USER_DATA="/Users/YourUsername/Library/Application Support/Google/Chrome"
-        ```
-    - Close all Chrome windows
-    - Open the WebUI in a non-Chrome browser, such as Firefox or Edge. This is important because the persistent browser context will use the Chrome data when running the agent.
-    - Check the "Use Own Browser" option within the Browser Settings.
+### 6. AI Agent Marketplace
+- Three pre-built AI agents
+- Industry-specific specializations
+- Voice demo functionality
+- Professional avatars from Unsplash
 
-### Option 2: Docker Installation
+### 7. Dashboard Preview
+- 4-step campaign setup process
+- Interactive upload zone
+- Real-time analytics cards
+- Simulated live data
 
-#### Prerequisites
-- Docker and Docker Compose installed
-  - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (For Windows/macOS)
-  - [Docker Engine](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) (For Linux)
+### 8. Call-to-Action Section
+- Conversion-focused messaging
+- Multiple action buttons
+- Trust indicators
 
-#### Step 1: Clone the Repository
-```bash
-git clone https://github.com/browser-use/web-ui.git
-cd web-ui
-```
+### 9. Footer
+- Organized link structure
+- Brand information
+- Contact details
 
-#### Step 2: Configure Environment
-1. Create a copy of the example environment file:
-- Windows (Command Prompt):
-```bash
-copy .env.example .env
-```
-- macOS/Linux/Windows (PowerShell):
-```bash
-cp .env.example .env
-```
-2. Open `.env` in your preferred text editor and add your API keys and other settings
+## 🛠️ Technical Implementation
 
-#### Step 3: Docker Build and Run
-```bash
-docker compose up --build
-```
-For ARM64 systems (e.g., Apple Silicon Macs), please run follow command:
-```bash
-TARGETPLATFORM=linux/arm64 docker compose up --build
+### Responsive Design
+- Mobile-first approach
+- Breakpoints at 768px and 480px
+- Flexible grid layouts
+- Touch-friendly interactions
+
+### Performance Optimizations
+- Efficient CSS with custom properties
+- Minimal JavaScript footprint
+- Optimized animations
+- Fast loading times
+
+### Accessibility Features
+- Semantic HTML structure
+- Keyboard navigation support
+- Screen reader compatibility
+- High contrast ratios
+
+### Browser Compatibility
+- Modern browsers (ES6+)
+- Graceful degradation
+- Progressive enhancement
+- Mobile browser optimization
+
+## 🎨 Customization
+
+### Colors
+Modify the CSS custom properties in `:root`:
+```css
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #10b981;
+    --accent-color: #f97316;
+}
 ```
 
-#### Step 4: Enjoy the web-ui and vnc
-- Web-UI: Open `http://localhost:7788` in your browser
-- VNC Viewer (for watching browser interactions): Open `http://localhost:6080/vnc.html`
-  - Default VNC password: "youvncpassword"
-  - Can be changed by setting `VNC_PASSWORD` in your `.env` file
+### Fonts
+Update the Google Fonts import and CSS font families:
+```css
+font-family: 'Poppins', sans-serif; /* Headings */
+font-family: 'Inter', sans-serif;   /* Body text */
+```
 
-## Changelog
-- [x] **2025/01/26:** Thanks to @vvincent1234. Now browser-use-webui can combine with DeepSeek-r1 to engage in deep thinking!
-- [x] **2025/01/10:** Thanks to @casistack. Now we have Docker Setup option and also Support keep browser open between tasks.[Video tutorial demo](https://github.com/browser-use/web-ui/issues/1#issuecomment-2582511750).
-- [x] **2025/01/06:** Thanks to @richard-devbot. A New and Well-Designed WebUI is released. [Video tutorial demo](https://github.com/warmshao/browser-use-webui/issues/1#issuecomment-2573393113).
+### Content
+- Modify text content directly in `index.html`
+- Update pricing tiers in `script.js`
+- Customize voice demo messages in `getVoiceMessage()` function
+
+## 📱 Mobile Experience
+
+The website is fully optimized for mobile devices with:
+- Responsive navigation menu
+- Touch-friendly interactions
+- Optimized typography scales
+- Mobile-specific layouts
+- Gesture support for sliders
+
+## 🔄 Interactive Elements
+
+### Pricing Calculator
+```javascript
+// Pricing tiers are automatically calculated based on volume
+if (calls <= 500) {
+    monthlyPrice = Math.max(49, calls * 0.15);
+} else if (calls <= 1000) {
+    monthlyPrice = 75 + (calls - 500) * 0.12;
+}
+// ... additional tiers
+```
+
+### Voice Demos
+- Simulated audio playback
+- Visual feedback during "playback"
+- Contextual notification messages
+- Button state management
+
+### Scroll Animations
+- Intersection Observer API
+- Performance-optimized animations
+- Respect for reduced motion preferences
+- Smooth scroll behavior
+
+## 🌐 Browser Support
+
+- Chrome 70+
+- Firefox 65+
+- Safari 12+
+- Edge 79+
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## 📊 Analytics Integration Ready
+
+The website structure is prepared for analytics integration:
+- Event tracking on CTA buttons
+- Form submission handlers
+- User interaction monitoring
+- Conversion funnel tracking
+
+## 🚀 Deployment
+
+### Static Hosting
+Perfect for deployment on:
+- Netlify
+- Vercel
+- GitHub Pages
+- AWS S3 + CloudFront
+- Any static hosting provider
+
+### CDN Integration
+- External fonts via Google Fonts
+- Unsplash images for agent avatars
+- Heroicons for consistent iconography
+
+## 📧 Contact & Support
+
+For questions about this implementation:
+- Check console logs for debugging information
+- All interactive elements provide user feedback
+- Mobile-responsive design ensures compatibility
+
+## 📄 License
+
+This website template is created for demonstration purposes. Customize and use as needed for your projects.
+
+---
+
+**Built with ❤️ using modern web technologies**
+
+- HTML5 semantic structure
+- CSS3 with custom properties and grid/flexbox
+- Vanilla JavaScript ES6+
+- Mobile-first responsive design
+- Performance-optimized animations
