@@ -14,10 +14,63 @@ const geistMono = Geist_Mono({
 
 import Header from "@/components/Header"; // Import the Header component
 import StickyBottomBanner from "@/components/StickyBottomBanner"; // Import the banner
+import Footer from "@/components/Footer"; // Ensure Footer is imported if not already
+
+const siteName = "Hybrid Calling™ by Neo Agents™";
+const siteDescription = "Elevate your business communications with AI Voice Agents that sound perfectly human. Automate sales, support, and more, 24/7.";
+const siteUrl = "https://www.hybridcalling.com"; // Placeholder URL
+const ogImagePlaceholder = `${siteUrl}/og-image.png`; // Placeholder OG image
 
 export const metadata: Metadata = {
-  title: "Hybrid Calling",
-  description: "AI Agents That Talk Like You — 24/7. No Holidays.",
+  metadataBase: new URL(siteUrl), // Required for resolving relative og:image paths
+  title: {
+    default: `${siteName} - Intelligent AI Voice Agents`, // Default title for homepage or unspecified pages
+    template: `%s | ${siteName}`, // Template for page-specific titles
+  },
+  description: siteDescription,
+  viewport: "width=device-width, initial-scale=1",
+  icons: {
+    icon: "/favicon.ico", // Standard favicon
+    shortcut: "/favicon-16x16.png", // Example sizes
+    apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    title: siteName,
+    description: siteDescription,
+    url: siteUrl,
+    siteName: siteName,
+    images: [
+      {
+        url: ogImagePlaceholder, // Must be an absolute URL
+        width: 1200,
+        height: 630,
+        alt: `${siteName} - AI Voice Automation`,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description: siteDescription,
+    images: [ogImagePlaceholder], // Must be an absolute URL
+    // creator: "@YourTwitterHandle", // Optional
+  },
+  robots: { // Optional: Default good for SEO
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  // verification: { // Optional: For Google Search Console, etc.
+  //   google: 'your-google-site-verification-code',
+  // },
 };
 
 export default function RootLayout({

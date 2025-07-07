@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "framework": "nextjs", // Specifies the project framework for Vercel
+  "headers": [
+    {
+      "source": "/(.*)", // Apply to all paths
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        // Permissions-Policy can be more restrictive based on actual needs
+        { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=(), autoplay=()" }
+      ]
+    }
+  ],
+  "redirects": [
+    // Example: Redirect www to non-www (ensure your custom domain is set in Vercel dashboard)
+    // {
+    //   "source": "/www.yourcustomdomain.com/(.*)",
+    //   "destination": "https://yourcustomdomain.com/$1",
+    //   "permanent": true
+    // }
+  ],
+  // Environment variables (for things like API keys) should be set in the Vercel project settings dashboard
+  // for security, not in vercel.json.
+  "github": {
+    "silent": true // Optional: Prevents Vercel comments on every push if PRs are auto-deployed
+  }
+}

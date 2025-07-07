@@ -1,14 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-// import { MenuIcon, XIcon } from '@heroicons/react/outline'; // Example for mobile menu
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import NeonGlowButton from "./NeonGlowButton"; // Import NeonGlowButton
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/#features", label: "Features" }, // Assuming sections on homepage or dedicated /features page later
-  { href: "/#pricing", label: "Pricing" },   // Assuming sections on homepage or dedicated /pricing page later
+  { href: "/features", label: "Features" }, // Updated to point to full page
+  { href: "/pricing", label: "Pricing" },   // Updated to point to full page
   { href: "/demo", label: "Demo" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
@@ -19,7 +19,7 @@ export default function Header() {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-xl border-b border-white/10" // Adjusted opacity and blur
+      className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-xl border-b border-white/10"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
@@ -52,18 +52,20 @@ export default function Header() {
           <div className="flex items-center space-x-3">
             <div className="hidden md:flex items-center space-x-3">
               <Link
-                href="/login"
+                href="/auth/signin"  // UPDATED HREF
                 className="text-sm font-medium text-gray-300 hover:text-purple-300 px-3 py-2 rounded-md transition-colors"
               >
                 Login
               </Link>
-              {/* NeonGlowButton will replace this later */}
-              <Link
-                href="/signup"
-                className="text-sm font-semibold text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-md transition-colors shadow-md hover:shadow-purple-500/50"
+              <NeonGlowButton
+                href="/auth/signup" // UPDATED HREF
+                className="!text-sm !font-semibold !px-4 !py-2" // Override some default NeonGlowButton padding/font if needed
+                baseGradient="bg-purple-600" // Keep it simple, or make it more vibrant
+                hoverGradient="hover:bg-purple-700"
+                glowColor="rgba(168, 85, 247, 0.7)" // Purple glow
               >
                 Sign Up
-              </Link>
+              </NeonGlowButton>
             </div>
             {/* Mobile menu button */}
             <div className="md:hidden">
@@ -105,14 +107,14 @@ export default function Header() {
               ))}
               <div className="border-t border-gray-700/50 pt-3 mt-2 space-y-3">
                 <Link
-                  href="/login"
+                  href="/auth/signin"  // UPDATED HREF
                   className="block px-3 py-2.5 rounded-md text-base font-medium text-gray-200 hover:bg-purple-600/60 hover:text-white transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Login
                 </Link>
                 <Link
-                  href="/signup"
+                  href="/auth/signup" // UPDATED HREF
                   className="block w-full text-center px-4 py-2.5 rounded-md text-base font-semibold text-white bg-purple-600 hover:bg-purple-700 transition-colors shadow-md"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
